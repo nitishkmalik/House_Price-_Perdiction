@@ -1,4 +1,4 @@
-# Beginner House Price Prediction
+# House Price Prediction
 
 A small, runnable regression project that estimates a house price from its floor area, bedroom count, and location. It compares Linear Regression with Random Forest, then serves the better-scoring model in a simple Streamlit form. This is for learning, not for real estate decisions.
 
@@ -63,24 +63,4 @@ Selected model: Linear Regression
 
 Actual scores vary with package versions and the small hold-out sample. Check the printed metrics rather than copying the illustrative numbers above.
 
-## Placement interview: 15 questions and answers
-
-1. **What is supervised learning?** Learning from examples that include both input features and a known answer. Here, house details are features and price is the answer.
-2. **Is this classification or regression?** Regression, because price is a continuous numeric value.
-3. **What are the features and target?** Area, bedrooms, and location are features; price is the target.
-4. **Why check missing values?** Most estimators cannot safely learn from empty values, and missing data can distort results if ignored.
-5. **Why use the median for numeric values?** It is simple and is less affected by unusually high or low values than the mean.
-6. **Why fill missing locations with the mode?** Location is categorical, so its most frequent category is a straightforward replacement.
-7. **Why drop a row with missing price?** Price is the answer the model must learn. Filling it with a guess would teach the model fabricated labels.
-8. **What is One-Hot Encoding?** It creates a separate 0/1 column for each category, allowing a model to use labels such as Downtown without inventing a numeric ranking.
-9. **What does `train_test_split` do?** It separates data for fitting from unseen rows used to evaluate how well the model generalizes.
-10. **Why set `random_state`?** It makes the random split reproducible so results are easier to compare during development.
-11. **How does Linear Regression work?** It learns weights for input features and combines them to estimate a numeric target.
-12. **How does Random Forest Regressor work?** It combines predictions from many decision trees trained on varied samples/features to produce a regression estimate.
-13. **What does R² mean?** It measures how much target variation is explained relative to a simple average-based baseline. Higher is generally better; a negative score can occur on poor predictions.
-14. **What is MAE?** Mean Absolute Error is the average absolute gap between predicted and actual prices, in the same units as price. Lower is better.
-15. **Why choose one model using a held-out test set, and what are the limitations?** The example uses the held-out scores to demonstrate selection, but this tiny synthetic dataset makes scores unstable and can favor a model by chance. A real project should use more representative data and ideally a separate validation set or cross-validation, then keep a final test set untouched.
-
-## Notes
-
-This is intentionally small and beginner-friendly. It does not use an API, database, deep learning, or production data. For a portfolio, explain that location and market coverage are limited, small-data metrics are noisy, and a prediction is not an appraisal. The pickle file is loaded only from this project after you create it yourself; do not load pickle files from untrusted sources.
+lf; do not load pickle files from untrusted sources.
